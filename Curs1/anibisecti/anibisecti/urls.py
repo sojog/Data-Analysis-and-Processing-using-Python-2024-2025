@@ -21,16 +21,19 @@ import numpy as np
 from django.http import HttpResponse
 
 def ani_bisecti(request, start_year = 1899, stop_year = 2025):
-
+    # Construirea range-ului: ex: anii de la 1899 la 2025
     array = np.arange(start_year, stop_year + 1)
+
+    # filtrarea anilor bisecti
     years_array = array[(array % 400 == 0 ) |  ((array % 4 == 0) & (array % 100 != 0))]
 
+    # fiecare an bisect va fi pus intre <li> </li>
     li_years = "\n".join(map(lambda x: f"<li>{x}</li>" ,years_array))
 
     return HttpResponse(f"<ol>{li_years} </ol>")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', ani_bisecti),
-    path('<int:start_year>/<int:stop_year>', ani_bisecti),
+    path('', ani_bisecti), # se apeleaza cu https://127.0.0.1:8000
+    path('<int:start_year>/<int:stop_year>', ani_bisecti), # se apeleaza cu https://127.0.0.1:8000/1899/2025
 ]
