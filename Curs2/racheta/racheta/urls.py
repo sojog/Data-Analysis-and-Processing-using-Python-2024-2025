@@ -18,10 +18,16 @@ from django.contrib import admin
 from django.urls import path
 
 
-from lansator.views import zile_pana_la_lansare, nume_racheta_view
+from lansator.views import zile_pana_la_lansare, nume_racheta_view,racheta_template_view, today_view 
+
+
+from culori.views import random_color_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('lansare/', zile_pana_la_lansare),
-    path("nume/", nume_racheta_view)
+    path("nume/", nume_racheta_view),
+    path("", racheta_template_view),
+    path("azi", today_view), 
+    path("culori", random_color_view),
 ]
