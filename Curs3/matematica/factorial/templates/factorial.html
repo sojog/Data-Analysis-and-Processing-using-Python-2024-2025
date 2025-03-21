@@ -7,6 +7,11 @@
 </head>
 <body>
     <h1> {{n}}! = {{factorial}} </h1>
-    <p> {{lista}}</p>
+
+    {% for i, fact_i in lista %}
+        <p> {{i}}! = {{fact_i}} </p>
+    {% endfor %}
+
+    
 </body>
 </html>

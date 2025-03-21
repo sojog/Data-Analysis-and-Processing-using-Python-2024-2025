@@ -21,8 +21,6 @@ def calculeaza_factorial_v2(n):
 
 
 
-
-
 def factorial_view (request, n):
     try:
         n = int(n)   
@@ -52,8 +50,8 @@ def factorial_template_view(request, n):
 
 
     lista_factorial = [] # (6!, 720), (5!, 120), (4!, 24)
-    for i in range(n, -1, -1):
-        lista_factorial.append(  (i, calculeaza_factorial(i))    )
+    for i in range(n-1, -1, -1):
+        lista_factorial.append(  (i, calculeaza_factorial(i))   )
 
 
 
