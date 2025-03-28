@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Aici va fi formularul dvs</h1>
+    
+    <form action="" method="get">
+
+
+         <input type="checkbox" name="withupper" id="" checked>
+        <label for="withupper">Cu litere mari?</label>
+
+        <input type="checkbox" name="withdigits" id="" checked>
+        <label for="withdigits">Cu numere?</label>
+
+        <input type="checkbox" name="withspecial" id="" checked>
+        <label for="withspecial">Cu caractere special?</label>
+
+        <input type="number" min=8 max=15 value=12 name="lungime" id="">
+        <input type="submit" name="" id=""
+        value="Trimite">
+
+    </form>
+
+
+    {% if parola %}
+        <h2> {{parola}}</h2>
+    {% endif %}
+
+
+</body>
+</html>
