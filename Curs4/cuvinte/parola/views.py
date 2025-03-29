@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 import random
 import string
-
+import os
 import pandas as pd
 
 CIFRE = [str(i) for i in range(10)]
@@ -35,6 +35,12 @@ def alege_view(request):
     }
     lungime = request.GET.get('lungime')
 
+        ## verific daca fisierul parole.csv exista, daca nu exista, il creez
+    if not os.path.exists("parole.csv"):
+        df = pd.DataFrame(columns=["index", "parola"])
+        df.to_csv("parole.csv", index=False)
+
+
     OPTIONS = string.ascii_lowercase 
     if request.GET.get('withupper'):
         OPTIONS += string.ascii_uppercase
@@ -50,15 +56,14 @@ def alege_view(request):
         for i in range(lungime):
             parola += random.choice(OPTIONS)
         context['parola'] = parola
-
-        
+        df = pd.read_csv("parole.csv", index_col=0)
+        df.loc[len(df)] = parola
+        df.to_csv("parole.csv")
+        print("df=", df)
 
     except:
         pass
 
-    df = pd.read_csv("parole.csv")
-    df.loc[len(df)] = parola
-    df.to_csv("parole.csv")
-    print("df=", df)
-    
+ 
+
     return render(request, "alege.html", context)
