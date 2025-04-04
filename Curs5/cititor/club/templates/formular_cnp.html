@@ -8,8 +8,10 @@
 <body>
 
     <h1>Valideaza CNP-ul </h1>
-    <form action="" method="get">
 
+    <form action="rezultat" method="post">
+
+        {% csrf_token %}
         <input type="text" name="cnp" id="">
         <input type="submit" value="Valideaza">
 
