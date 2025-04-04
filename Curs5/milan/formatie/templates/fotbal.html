@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* view height - 100 : inaltimea ecranului */
+            width: 100vw; /* view width */
+            background-color: antiquewhite;
+           
+        }
+        main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: green;
+            height: 80vh; /* view height */
+            width: 80vw; /* view width */
+            
+            background-image: url('https://static.flashscore.com/res/_fs/build/symbols.a15cd79.svg#soccerFieldView');
+            background-size: contain;
+        }
+        section{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 100%;
+            width: 50%;
+        }
+        #romania {
+            /* background-color: yellow; */
+        }
+        #argentina {
+            /* background-color: aqua; */
+            flex-direction: row-reverse;
+        }
+        .linie {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            /* background-color: crimson; */
+            margin: 3px;
+            height: 100%;
+        }
+        .numejucator{
+            background-color: black;
+            color:white;
+        }
+        /* pseudo clase */
+        .jucator:hover{
+            transform: scale(1.2) rotate(3deg);
+        }
+        
+
+        @media screen and (max-width:992px) {
+            main, section{ 
+                flex-direction: column;
+            }
+            .linie {
+                flex-direction: row-reverse;
+            }
+            #argentina { 
+                flex-direction: column-reverse;
+            }
+            .linie img {
+                height: 50px;
+                width: 50px;
+            }
+            .linie .numejucator {
+                font-size: 9px;
+            } 
+            /* main {
+                transform: rotate(90deg);
+            }
+            .jucator {
+                transform: rotate(-90deg);
+            } */
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        
+        <section id="romania">
+
+            <div class="linie">
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/lKATvXFl-rmkgmAdj.png" alt="">
+                    <div class="numejucator">1. Prunea</div>
+                </div>
+               
+            </div>
+
+            <div class="linie">
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/4CvHzYy0-SlvXJFL8.png" alt="">
+                    <div class="numejucator">14. Mihali</div>
+                </div>
+                
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/bVD48Byq-EuLETeEg.png" alt="">
+                    <div class="numejucator">4. Belodedici</div>
+                </div>
+               
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/6aVTo3Hl-lbuTKe62.png" alt="">
+                    <div class="numejucator">3. Prodan</div>
+                </div>
+                
+            </div>
+
+            <div class="linie">
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/I36lLwKM-lbuTKe62.png" alt="">
+                    <div class="numejucator">13. Selimes</div>
+                </div>
+                
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/SUsNgwcf-GbxyyvMJ.png" alt="">
+                    <div class="numejucator">5. Lupescu</div>
+                </div>
+                
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/hfbYlk1S-bD0R8zeH.png" alt="">
+                    <div class="numejucator">6. Popescu</div>
+                </div>
+                
+
+                <div class="jucator"><img src="https://static.flashscore.com/res/image/data/tnJbTnbB-bD0R8zeH.png" alt="">
+                <div class="numejucator">2. Predescu</div>
+                </div>
+                
+            </div>
+            <div class="linie">
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/KlAm9Pef-bZa0VSHL.png" alt="">
+                <div class="numejucator">10. Hagi</div>
+                </div>
+                
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/tYgTJOFl-4S8nh0Lr.png" alt="">
+                    <div class="numejucator">7. Munteanu</div>
+                </div>
+                
+            </div>
+
+            <div class="linie">
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/8tcDHhI5-2DZEhJSj.png" alt="">
+                    <div class="numejucator">11. Dumitrescu</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="argentina">
+
+            <div class="linie">
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/lKATvXFl-rmkgmAdj.png" alt="">
+                    <div class="numejucator">1. Prunea</div>
+                </div>
+               
+            </div>
+
+            <div class="linie">
+
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/8tcDHhI5-2DZEhJSj.png" alt="">
+                    <div class="numejucator">11. Dumitrescu</div>
+                </div>
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/4CvHzYy0-SlvXJFL8.png" alt="">
+                    <div class="numejucator">14. Mihali</div>
+                </div>
+                
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/bVD48Byq-EuLETeEg.png" alt="">
+                    <div class="numejucator">4. Belodedici</div>
+                </div>
+               
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/6aVTo3Hl-lbuTKe62.png" alt="">
+                    <div class="numejucator">3. Prodan</div>
+                </div>
+                
+            </div>
+
+            <div class="linie">
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/I36lLwKM-lbuTKe62.png" alt="">
+                    <div class="numejucator">13. Selimes</div>
+                </div>
+                
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/SUsNgwcf-GbxyyvMJ.png" alt="">
+                    <div class="numejucator">5. Lupescu</div>
+                </div>
+                
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/hfbYlk1S-bD0R8zeH.png" alt="">
+                    <div class="numejucator">6. Popescu</div>
+                </div>
+                
+
+                <div class="jucator"><img src="https://static.flashscore.com/res/image/data/tnJbTnbB-bD0R8zeH.png" alt="">
+                <div class="numejucator">2. Predescu</div>
+                </div>
+                
+            </div>
+            <div class="linie">
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/KlAm9Pef-bZa0VSHL.png" alt="">
+                <div class="numejucator">10. Hagi</div>
+                </div>
+                
+
+                <div class="jucator">
+                    <img src="https://static.flashscore.com/res/image/data/tYgTJOFl-4S8nh0Lr.png" alt="">
+                    <div class="numejucator">7. Munteanu</div>
+                </div>
+                
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+</body>
+</html>
