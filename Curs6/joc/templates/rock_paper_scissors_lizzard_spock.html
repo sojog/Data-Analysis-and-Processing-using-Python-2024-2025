@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        #optiuni, #rezultat {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        button{
+            font-size:50px;
+            border:none;
+        }
+    </style>
+
+
+</head>
+<body>  
+        <div id="optiuni">
+
+                {% for  name, value in pairs   %}
+
+                    <form action="" method="post">
+                        {% csrf_token %}
+
+                        <input type="hidden" name="chosen" value="{{value}}">
+                        <button type="submit">{{ name.emoji }}</button>
+                   
+                    </form>
+            
+
+                {% endfor %}
+
+        </div>
+
+
+        <div id="rezultat">
+                <div id="client"> {{ client.emoji}} </div>
+                <div id="rezultat"> {{rezultat}}</div>
+                <div id="server"> {{ server.emoji}}</div>
+        </div>
+
+    
+</body>
+</html>
