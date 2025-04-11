@@ -12,9 +12,11 @@
     <form action="" method="post">
         {% csrf_token %} 
         <select name="chosen" id="">
-            <option value="1">Rock</option>
-            <option value="2">Paper</option>
-            <option value="3">Scissors</option>
+
+            {% for name, value in pairs  %}
+                <option value="{{ value }}"> {{name}}</option>
+            {% endfor %}
+
         </select>
         <button type="submit">Trimite</button>
     </form>
