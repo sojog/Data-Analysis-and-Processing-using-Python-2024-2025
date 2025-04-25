@@ -75,6 +75,38 @@ def _create_templates_folder(app_name="test_app", project_name="test_project"):
     TEMPLATES = "templates"
     os.makedirs(TEMPLATES, exist_ok=True)
 
+def _create_app_url_file(app_name="test_app", project_name="test_project"):
+    cwd = os.getcwd()
+    os.chdir(os.path.join(cwd, project_name, app_name))
+    URLS_FILE_NAME = "urls.py"
+    URLS_CONTENT = """from django.urls import path\n\nurlpatterns = [\n\n]\n"""
+    with open(URLS_FILE_NAME, "w") as fwriter:
+        fwriter.write(URLS_CONTENT)
+
+def _link_app_in_project_url_file(app_name="test_app", project_name="test_project"):
+    cwd = os.getcwd()
+    os.chdir(os.path.join(cwd, project_name, project_name))
+    with open("urls.py", "r") as freader:
+        urls_lines = freader.readlines()
+
+    print(urls_lines)
+    has_encounter_urlpatterns = False
+    new_line = f"\tpath('{app_name}/', include('{app_name}.urls')),\n"
+    if new_line in urls_lines:
+        return
+
+    for index, line in enumerate(urls_lines):
+        if 'from django.urls import path' in line and 'include' not in line:
+            urls_lines[index] = line.replace("path", "path, include")
+        if "urlpatterns = [" in line:
+            has_encounter_urlpatterns = True
+        elif has_encounter_urlpatterns and "]" in line:
+            urls_lines.insert(index, new_line)
+            break
+
+    with open("urls.py", "w") as fwriter:
+        fwriter.writelines(urls_lines)
+
 
 def demo_enumerate():
     lista_mea = ["Maria", "Ion", "Gheorghe", "Vasile"]
@@ -87,7 +119,7 @@ def demo_enumerate():
 
 if __name__ == "__main__":
     # print(os.getcwd())
-    _create_templates_folder()
+    _link_app_in_project_url_file()
 
     # create_project()
     # time.sleep(3)
