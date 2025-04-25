@@ -69,13 +69,22 @@ def _add_app_to_installed_apps(app_name="test_app", project_name="test_project")
     with open("settings.py", "w") as fwriter:
         fwriter.writelines(settings_content)
 
+def demo_enumerate():
+    lista_mea = ["Maria", "Ion", "Gheorghe", "Vasile"]
+    for index, element in enumerate(lista_mea):
+        print(index, element)
+        if element == "Gheorghe":
+            lista_mea.insert(index, "Florina")
+            break
+    print(lista_mea)
+
 if __name__ == "__main__":
     # print(os.getcwd())
-
+    demo_enumerate()
 
     # create_project()
     # time.sleep(3)
     # create_application()
-    _add_app_to_installed_apps()
+    # _add_app_to_installed_apps()
 
     # delete_project()
