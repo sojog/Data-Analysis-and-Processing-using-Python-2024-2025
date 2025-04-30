@@ -6,6 +6,15 @@
     <title>blog_list</title>
 </head>
 <body>
-    <h1>blog_list</h1>
+    <h1>Blog list</h1>
+    <ol>
+        {% for blog in blog_model_list %}
+            <li>
+                <h2> {{blog.title}}</h2>
+                <p> {{blog.content}}</p>
+            
+            </li>
+        {% endfor %}
+    </ol>
 </body>
 </html>
