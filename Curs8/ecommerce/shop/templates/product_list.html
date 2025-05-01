@@ -6,6 +6,15 @@
     <title>product_list</title>
 </head>
 <body>
-    <h1>product_list</h1>
+     <h1>Product list</h1>
+    <ol>
+        {% for product in product_model_list %}
+            <li>
+                <h2> {{product.title}}</h2>
+                <p> {{product.content}}</p>
+            
+            </li>
+        {% endfor %}
+    </ol>
 </body>
 </html>
