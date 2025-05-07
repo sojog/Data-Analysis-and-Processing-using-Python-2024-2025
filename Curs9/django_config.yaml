@@ -1,0 +1,19 @@
+# Schimba PROJECT_NAME cu numele proiectului
+ToDoProject:  
+        # Schimba APP_NAME1 cu numele aplicatiei
+        ToDoApp:
+
+            - view_name: todo_list
+              url_path_name: list
+              template_name: todo_list
+            - view_name: todo_details
+              url_path_name: details
+              template_name: todo_details
+
+        # Schimba APP_NAME2 cu numele aplicatiei
+        # APP_NAME2:
+        #     - view_name: NUME_VIEW3
+        #       url_path_name: NUME_URL3
+        #       template_name: NUME_TEMPLATE3
+
+        # Mai adauga aplicatii si view-uri in acest fel
