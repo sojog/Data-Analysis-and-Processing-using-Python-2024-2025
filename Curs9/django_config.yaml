@@ -21,6 +21,9 @@ ToDoProject:
               url_path_name: update
               template_name: update_todo
 
+            - view_name: mark_done_todo
+              url_path_name: mark
+              template_name: mark_todo
 
 
 

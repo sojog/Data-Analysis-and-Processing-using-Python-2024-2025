@@ -1,4 +1,5 @@
 from django.urls import path
+from .views import mark_done_todo_view
 from .views import update_todo_view
 from .views import delete_todo_view
 from .views import create_todo_view
@@ -12,4 +13,5 @@ urlpatterns = [
 	path("create", create_todo_view, name="create_todo_url"),
 	path("delete/<int:pk>", delete_todo_view, name="delete_todo_url"),
 	path("update/<int:pk>", update_todo_view, name="update_todo_url"),
+	path("mark/<int:pk>", mark_done_todo_view, name="mark_todo_url"),
 ]

@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todo_list</title>
+    <style>
+        .done {
+              text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
     <h1>Tema pentru vineri 9 mai, ziua Europei!!</h1>
@@ -11,10 +16,24 @@
     <ol>
         {% for model in model_list %}
         
-            <li>{{model}} 
-                    <a href= "{% url 'delete_todo_url' model.id %}" >✅</a>
+            <li>    
+            {% if model.is_done %}
+                 <span class="done"> {{model}}  </span>
+            {% else %}
+                 <span > {{model}}  </span>
+            {% endif %}
+                    
+                    <a href= "{% url 'mark_todo_url' model.id %}" >
+                            {% if model.is_done %}
+                                ↩️
+                            {% else %}
+                                ✅
+                            {% endif %}
+                    </a>
 
                     <a href= "{% url 'update_todo_url' model.id %}" >✍️</a>
+
+                      <a href= "{% url 'delete_todo_url' model.id %}" >❌</a>
              </li>
         {% endfor %}
     </ol>
