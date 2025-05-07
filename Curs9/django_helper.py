@@ -11,6 +11,7 @@ import subprocess
 import time
 import shutil
 import yaml
+from pathlib import Path
 
 # Verifica sistemul de operare este Windows
 if os.name == "nt":
@@ -365,6 +366,9 @@ def main_interactive():
 
 if __name__ == "__main__":
     # verifica daca exista django_config.yaml
+    ## TODO: get path of current file
+    
+
     if not os.path.exists("django_config.yaml"):
         create_django_config_file()
         print("django_config.yaml a fost creat")

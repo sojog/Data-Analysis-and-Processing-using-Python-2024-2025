@@ -12,6 +12,19 @@ ToDoProject:
             - view_name: create_todo
               url_path_name: create
               template_name: create_todo
+
+            - view_name: delete_todo
+              url_path_name: delete
+              template_name: delete_todo
+
+            - view_name: update_todo
+              url_path_name: update
+              template_name: update_todo
+
+
+
+
+
         # Schimba APP_NAME2 cu numele aplicatiei
         # APP_NAME2:
         #     - view_name: NUME_VIEW3
