@@ -3,7 +3,15 @@ from .models import ToDoItem
 # Create your views here.
 
 def todo_list_view(request):
-	todo_model_list = ToDoItem.objects.all()
+
+	filter_type =request.GET.get("filter")
+	if filter_type == "done":
+		todo_model_list = ToDoItem.objects.filter(is_done=True)
+	elif filter_type == "undone":
+		todo_model_list = ToDoItem.objects.filter(is_done=False)
+	else:
+		todo_model_list = ToDoItem.objects.all()
+	
 	context = {
 		'model_list' :  todo_model_list 
 	}
