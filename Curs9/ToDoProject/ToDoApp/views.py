@@ -13,7 +13,8 @@ def todo_list_view(request):
 		todo_model_list = ToDoItem.objects.all()
 	
 	context = {
-		'model_list' :  todo_model_list 
+		'model_list' :  todo_model_list,
+		'filter_type' : filter_type 
 	}
 	return render(request, 'todo_list.html', context)
 
